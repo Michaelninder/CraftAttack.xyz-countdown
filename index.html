@@ -29,7 +29,7 @@
 <body
     class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen flex flex-col items-center justify-center">
     <button id="themeToggle"
-        class="absolute top-4 right-4 p-2 rounded-full bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 focus:outline-none">
+        class="absolute top-4 right-4 p-2 rounded-full bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 focus:outline-none transition-transform duration-200 hover:scale-110">
         <svg id="sunIcon" class="h-6 w-6 hidden" fill="none"
             viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round"
@@ -44,46 +44,51 @@
         </svg>
     </button>
 
-	<main class="text-center p-6 flex-1 flex flex-col justify-center">
-        <h1 class="text-5xl font-bold mb-6">Diese Seite befindet
-            sich im Aufbau.</h1>
-        <p class="text-2xl mb-12">Craft Attack startet am
-            25.10.2025!</p>
+    <main class="text-center p-6 flex-1 flex flex-col justify-center">
+        <h1 class="text-5xl font-bold mb-6 animate-pulse">Diese Seite
+            befindet sich im Aufbau.</h1>
+        <p class="text-2xl mb-2">Craft Attack</p>
+        <p class="text-2xl mb-12">Startet am 25. Oktober um 12 Uhr</p>
 
         <div id="countdown"
             class="flex justify-center items-center space-x-6 text-7xl mb-4">
-            <div class="flex flex-col items-center">
+            <div
+                class="flex flex-col items-center p-4 bg-gray-200 dark:bg-gray-800 rounded-lg shadow-lg">
                 <span id="days">00</span>
                 <span class="text-xl">Tage</span>
             </div>
             <span class="text-gray-400">:</span>
-            <div class="flex flex-col items-center">
+            <div
+                class="flex flex-col items-center p-4 bg-gray-200 dark:bg-gray-800 rounded-lg shadow-lg">
                 <span id="hours">00</span>
                 <span class="text-xl">Stunden</span>
             </div>
             <span class="text-gray-400">:</span>
-            <div class="flex flex-col items-center">
+            <div
+                class="flex flex-col items-center p-4 bg-gray-200 dark:bg-gray-800 rounded-lg shadow-lg">
                 <span id="minutes">00</span>
                 <span class="text-xl">Minuten</span>
             </div>
             <span class="text-gray-400">:</span>
-            <div class="flex flex-col items-center">
+            <div
+                class="flex flex-col items-center p-4 bg-gray-200 dark:bg-gray-800 rounded-lg shadow-lg">
                 <span id="seconds">00</span>
                 <span class="text-xl">Sekunden</span>
             </div>
         </div>
 
         <p id="postCountdownMessage"
-            class="text-4xl font-bold mt-8 hidden">
+            class="text-4xl font-bold mt-8 hidden animate-bounce">
             Craft Attack hat begonnen!</p>
     </main>
 
     <footer class="mt-auto p-4 text-center text-gray-600 dark:text-gray-400">
         <p class="text-xs">Diese Seite wurde von Fabian Ternis (
-            <a href="https://fternis.de" class="hover:underline">fternis.de</a>
+            <a href="https://fternis.de"
+                class="hover:underline text-blue-500 dark:text-blue-400">fternis.de</a>
             /
             <a href="https://fabianternis.dev"
-                class="hover:underline">fabianternis.dev</a>
+                class="hover:underline text-blue-500 dark:text-blue-400">fabianternis.dev</a>
             ) erstellt.
         </p>
     </footer>
@@ -120,7 +125,7 @@
             }
         });
 
-        const countdownDate = new Date("October 25, 2025 00:00:00").getTime();
+        const countdownDate = new Date("October 25, 2025 12:00:00").getTime();
         const countdownElement = document.getElementById('countdown');
         const postCountdownMessage = document.getElementById('postCountdownMessage');
 
